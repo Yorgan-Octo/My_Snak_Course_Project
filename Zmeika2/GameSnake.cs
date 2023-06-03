@@ -12,7 +12,7 @@ namespace Snak_Course_Project
 
         public void StartGame()
         {
-
+            score =  0;
             Console.Clear();
             DrawBoard();
 
