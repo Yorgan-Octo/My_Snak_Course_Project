@@ -98,8 +98,19 @@ namespace Snak_Course_Project
 
         private void DrawWinInfo()
         {
+
             Console.SetCursorPosition(SettingsGame.MapWidth / 3, SettingsGame.MapHeight / 2);
             Console.WriteLine($"Ти труп! Очки: {score}");
+
+            if (Saving.rocerds.Count == 0 || score > Saving.rocerds.Peek())
+            {
+                Saving.rocerds.Push(score);
+                Console.Beep(800, 500);
+
+                Console.SetCursorPosition(SettingsGame.MapWidth / 3 +2, SettingsGame.MapHeight / 2 +2);
+                Console.WriteLine($"Новий Рекорд");
+            }
+
         }
 
         private void DrawBoard()
